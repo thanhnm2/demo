@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> } -->
+        <div id="result"></div> 
+    <script>
+       
+    var school={
+        name: 'T3H',
+        address: 'ho tung mau',
+        class:[{
+            name:'1',
+            room:'1',
+            total:'40',
+            students:[{
+                name:'thanh nguyen',
+                age:'18',
+                cocc: function(){
+                    var arr=['',''];
+                    return arr.toString();
+                }
+            }]
+        }]
+    }
+    sessionStorage.setItem('LJAVA2102', JSON.stringify(school));
+    var object=JSON.parse(sessionStorage.getItem('LJAVA2102'));
+    var hs="";
+    for(var i=0; i<object.class.length;i++){
+        hs += "</p>"
+        for (var j=0; j<object.class[i].students.length; j++){
+            console.log(object.class[i].students[j]);
+            hs += object.class[i].students[j].cocc() + '-' + object[i].st;
+        }
+        hs += "</p>"
+    }    
+    document.getElementById('result').innerHTML=hs;
+    </script>    
+</body>
+</html>
